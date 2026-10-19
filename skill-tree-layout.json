@@ -1,0 +1,1889 @@
+{
+ "_meta": {
+  "generated_for": "idle-loot-design / Diablo II idle-loot remake",
+  "schema": "{ cls: [ { tree, treeZh, key, skills:[{id,en,zh,row,col,listRow,iconCel,reqLevel,maxLevel,prereq:[...]}] } ] }",
+  "coordinate_system": {
+   "row": "1..6, top -> bottom, within the tree page",
+   "col": "1..3, left -> right, within the tree page",
+   "note": "row=0/col=0 means the skill is not placed on any tree page (passives/unused)."
+  },
+  "confidence": "HIGH - layout is the game own UI table, not reverse-engineered",
+  "sources": {
+   "layout": "d2data/raw/skilldesc.txt columns SkillPage / SkillRow / SkillColumn / ListRow / IconCel",
+   "prereq": "d2data/raw/skills.txt columns reqskill1..3 (same-tree arrows only; verified no cross-tree prereqs)",
+   "levels": "d2data/raw/skills.txt columns reqlevel / maxlvl",
+   "en_names": "d2data/raw/skills.txt column skill",
+   "zh_names": "d2data/skill_names_zh.json (project canon) + idle-loot-design/d2rules/07b-技能名译名说明.md (fallback)",
+   "visual_check": "All 12 pages independently verified against in-game tree screenshots (diablo-archive fandom wiki)."
+  },
+  "zh_name_confidence": "zh names are the project's existing canon; 59 of 120 were only in the 07b doc, not D2R-official strings. Marked per-skill via zhSource.",
+  "tree_name_mapping_note": "skilldesc.txt has no tab-name column. Page -> tab-name mapping was derived from charstats.txt StrSkillTab1..3 plus each page's skill contents, and cross-checked against d2lib.py SKILL_TABS. Confidence HIGH.",
+  "images": {
+   "per_tree_pages": "idle-loot-design/refs/tree_<cls>_<key>_page<N>.png (231x432, exactly one tree page each)",
+   "class_composites": "idle-loot-design/refs/tree_<cls>_all.png (693x432 = the three pages side by side)",
+   "source": "https://diablo-archive.fandom.com (File:<Class> Skill Trees (Diablo II).png)"
+  }
+ },
+ "ama": {
+  "class": "Amazon",
+  "classZh": "亚马逊",
+  "trees": [
+   {
+    "tree": "Bow and Crossbow Skills",
+    "treeZh": "弓与弩技能",
+    "key": "bow",
+    "skillPage": 1,
+    "imageSheet": "tree_ama_bow_page1.png",
+    "skills": [
+     {
+      "id": "Magic Arrow",
+      "en": "Magic Arrow",
+      "zh": "魔法箭",
+      "zhSource": "skill_names_zh.json",
+      "row": 1,
+      "col": 2,
+      "listRow": 1,
+      "iconCel": 0,
+      "reqLevel": 1,
+      "maxLevel": 20,
+      "prereq": []
+     },
+     {
+      "id": "Fire Arrow",
+      "en": "Fire Arrow",
+      "zh": "火焰箭",
+      "zhSource": "skill_names_zh.json",
+      "row": 1,
+      "col": 3,
+      "listRow": 1,
+      "iconCel": 2,
+      "reqLevel": 1,
+      "maxLevel": 20,
+      "prereq": []
+     },
+     {
+      "id": "Cold Arrow",
+      "en": "Cold Arrow",
+      "zh": "冰霜箭",
+      "zhSource": "skill_names_zh.json",
+      "row": 2,
+      "col": 1,
+      "listRow": 1,
+      "iconCel": 10,
+      "reqLevel": 6,
+      "maxLevel": 20,
+      "prereq": []
+     },
+     {
+      "id": "Multiple Shot",
+      "en": "Multiple Shot",
+      "zh": "多重箭",
+      "zhSource": "skill_names_zh.json",
+      "row": 2,
+      "col": 2,
+      "listRow": 1,
+      "iconCel": 12,
+      "reqLevel": 6,
+      "maxLevel": 20,
+      "prereq": [
+       "Magic Arrow"
+      ]
+     },
+     {
+      "id": "Exploding Arrow",
+      "en": "Exploding Arrow",
+      "zh": "爆裂箭",
+      "zhSource": "d2rules/07b doc",
+      "row": 3,
+      "col": 3,
+      "listRow": 1,
+      "iconCel": 20,
+      "reqLevel": 12,
+      "maxLevel": 20,
+      "prereq": [
+       "Fire Arrow",
+       "Multiple Shot"
+      ]
+     },
+     {
+      "id": "Ice Arrow",
+      "en": "Ice Arrow",
+      "zh": "急冻箭",
+      "zhSource": "skill_names_zh.json",
+      "row": 4,
+      "col": 1,
+      "listRow": 1,
+      "iconCel": 30,
+      "reqLevel": 18,
+      "maxLevel": 20,
+      "prereq": [
+       "Cold Arrow"
+      ]
+     },
+     {
+      "id": "Guided Arrow",
+      "en": "Guided Arrow",
+      "zh": "导引箭",
+      "zhSource": "d2rules/07b doc",
+      "row": 4,
+      "col": 2,
+      "listRow": 1,
+      "iconCel": 32,
+      "reqLevel": 18,
+      "maxLevel": 20,
+      "prereq": [
+       "Cold Arrow",
+       "Multiple Shot"
+      ]
+     },
+     {
+      "id": "Strafe",
+      "en": "Strafe",
+      "zh": "连珠箭",
+      "zhSource": "d2rules/07b doc",
+      "row": 5,
+      "col": 2,
+      "listRow": 1,
+      "iconCel": 40,
+      "reqLevel": 24,
+      "maxLevel": 20,
+      "prereq": [
+       "Guided Arrow"
+      ]
+     },
+     {
+      "id": "Immolation Arrow",
+      "en": "Immolation Arrow",
+      "zh": "献祭箭",
+      "zhSource": "d2rules/07b doc",
+      "row": 5,
+      "col": 3,
+      "listRow": 1,
+      "iconCel": 42,
+      "reqLevel": 24,
+      "maxLevel": 20,
+      "prereq": [
+       "Exploding Arrow"
+      ]
+     },
+     {
+      "id": "Freezing Arrow",
+      "en": "Freezing Arrow",
+      "zh": "冻结箭",
+      "zhSource": "skill_names_zh.json",
+      "row": 6,
+      "col": 1,
+      "listRow": 1,
+      "iconCel": 50,
+      "reqLevel": 30,
+      "maxLevel": 20,
+      "prereq": [
+       "Ice Arrow"
+      ]
+     }
+    ]
+   },
+   {
+    "tree": "Passive and Magic Skills",
+    "treeZh": "被动与魔法技能",
+    "key": "passive",
+    "skillPage": 2,
+    "imageSheet": "tree_ama_passive_page2.png",
+    "skills": [
+     {
+      "id": "Inner Sight",
+      "en": "Inner Sight",
+      "zh": "心眼",
+      "zhSource": "skill_names_zh.json",
+      "row": 1,
+      "col": 1,
+      "listRow": 2,
+      "iconCel": 4,
+      "reqLevel": 1,
+      "maxLevel": 20,
+      "prereq": []
+     },
+     {
+      "id": "Critical Strike",
+      "en": "Critical Strike",
+      "zh": "致命攻击",
+      "zhSource": "skill_names_zh.json",
+      "row": 1,
+      "col": 3,
+      "listRow": 2,
+      "iconCel": 6,
+      "reqLevel": 1,
+      "maxLevel": 20,
+      "prereq": []
+     },
+     {
+      "id": "Dodge",
+      "en": "Dodge",
+      "zh": "闪避",
+      "zhSource": "skill_names_zh.json",
+      "row": 2,
+      "col": 2,
+      "listRow": 2,
+      "iconCel": 14,
+      "reqLevel": 6,
+      "maxLevel": 20,
+      "prereq": []
+     },
+     {
+      "id": "Slow Missiles",
+      "en": "Slow Missiles",
+      "zh": "飞矢减速",
+      "zhSource": "skill_names_zh.json",
+      "row": 3,
+      "col": 1,
+      "listRow": 2,
+      "iconCel": 22,
+      "reqLevel": 12,
+      "maxLevel": 20,
+      "prereq": [
+       "Inner Sight"
+      ]
+     },
+     {
+      "id": "Avoid",
+      "en": "Avoid",
+      "zh": "躲避",
+      "zhSource": "skill_names_zh.json",
+      "row": 3,
+      "col": 2,
+      "listRow": 2,
+      "iconCel": 24,
+      "reqLevel": 12,
+      "maxLevel": 20,
+      "prereq": [
+       "Dodge"
+      ]
+     },
+     {
+      "id": "Penetrate",
+      "en": "Penetrate",
+      "zh": "刺穿",
+      "zhSource": "skill_names_zh.json",
+      "row": 4,
+      "col": 3,
+      "listRow": 2,
+      "iconCel": 34,
+      "reqLevel": 18,
+      "maxLevel": 20,
+      "prereq": [
+       "Critical Strike"
+      ]
+     },
+     {
+      "id": "Dopplezon",
+      "en": "Dopplezon",
+      "zh": "诱饵",
+      "zhSource": "skill_names_zh.json",
+      "row": 5,
+      "col": 1,
+      "listRow": 2,
+      "iconCel": 44,
+      "reqLevel": 24,
+      "maxLevel": 20,
+      "prereq": [
+       "Slow Missiles"
+      ]
+     },
+     {
+      "id": "Evade",
+      "en": "Evade",
+      "zh": "回避",
+      "zhSource": "skill_names_zh.json",
+      "row": 5,
+      "col": 2,
+      "listRow": 2,
+      "iconCel": 46,
+      "reqLevel": 24,
+      "maxLevel": 20,
+      "prereq": [
+       "Avoid"
+      ]
+     },
+     {
+      "id": "Valkyrie",
+      "en": "Valkyrie",
+      "zh": "女武神",
+      "zhSource": "skill_names_zh.json",
+      "row": 6,
+      "col": 1,
+      "listRow": 2,
+      "iconCel": 52,
+      "reqLevel": 30,
+      "maxLevel": 20,
+      "prereq": [
+       "Dopplezon",
+       "Evade"
+      ]
+     },
+     {
+      "id": "Pierce",
+      "en": "Pierce",
+      "zh": "贯穿",
+      "zhSource": "skill_names_zh.json",
+      "row": 6,
+      "col": 3,
+      "listRow": 2,
+      "iconCel": 54,
+      "reqLevel": 30,
+      "maxLevel": 20,
+      "prereq": [
+       "Penetrate"
+      ]
+     }
+    ]
+   },
+   {
+    "tree": "Javelin and Spear Skills",
+    "treeZh": "标枪与长矛技能",
+    "key": "javelin",
+    "skillPage": 3,
+    "imageSheet": "tree_ama_javelin_page3.png",
+    "skills": [
+     {
+      "id": "Jab",
+      "en": "Jab",
+      "zh": "戳刺",
+      "zhSource": "skill_names_zh.json",
+      "row": 1,
+      "col": 1,
+      "listRow": 3,
+      "iconCel": 8,
+      "reqLevel": 1,
+      "maxLevel": 20,
+      "prereq": []
+     },
+     {
+      "id": "Power Strike",
+      "en": "Power Strike",
+      "zh": "电荷攻击",
+      "zhSource": "d2rules/07b doc",
+      "row": 2,
+      "col": 2,
+      "listRow": 3,
+      "iconCel": 16,
+      "reqLevel": 6,
+      "maxLevel": 20,
+      "prereq": [
+       "Jab"
+      ]
+     },
+     {
+      "id": "Poison Javelin",
+      "en": "Poison Javelin",
+      "zh": "剧毒标枪",
+      "zhSource": "skill_names_zh.json",
+      "row": 2,
+      "col": 3,
+      "listRow": 3,
+      "iconCel": 18,
+      "reqLevel": 6,
+      "maxLevel": 20,
+      "prereq": []
+     },
+     {
+      "id": "Impale",
+      "en": "Impale",
+      "zh": "刺爆",
+      "zhSource": "d2rules/07b doc",
+      "row": 3,
+      "col": 1,
+      "listRow": 3,
+      "iconCel": 26,
+      "reqLevel": 12,
+      "maxLevel": 20,
+      "prereq": [
+       "Jab"
+      ]
+     },
+     {
+      "id": "Lightning Bolt",
+      "en": "Lightning Bolt",
+      "zh": "闪电球",
+      "zhSource": "d2rules/07b doc",
+      "row": 3,
+      "col": 3,
+      "listRow": 3,
+      "iconCel": 28,
+      "reqLevel": 12,
+      "maxLevel": 20,
+      "prereq": [
+       "Poison Javelin"
+      ]
+     },
+     {
+      "id": "Charged Strike",
+      "en": "Charged Strike",
+      "zh": "充能一击",
+      "zhSource": "skill_names_zh.json",
+      "row": 4,
+      "col": 2,
+      "listRow": 3,
+      "iconCel": 36,
+      "reqLevel": 18,
+      "maxLevel": 20,
+      "prereq": [
+       "Power Strike",
+       "Lightning Bolt"
+      ]
+     },
+     {
+      "id": "Plague Javelin",
+      "en": "Plague Javelin",
+      "zh": "瘟疫标枪",
+      "zhSource": "d2rules/07b doc",
+      "row": 4,
+      "col": 3,
+      "listRow": 3,
+      "iconCel": 38,
+      "reqLevel": 18,
+      "maxLevel": 20,
+      "prereq": [
+       "Lightning Bolt"
+      ]
+     },
+     {
+      "id": "Fend",
+      "en": "Fend",
+      "zh": "猛刺",
+      "zhSource": "skill_names_zh.json",
+      "row": 5,
+      "col": 1,
+      "listRow": 3,
+      "iconCel": 48,
+      "reqLevel": 24,
+      "maxLevel": 20,
+      "prereq": [
+       "Impale"
+      ]
+     },
+     {
+      "id": "Lightning Strike",
+      "en": "Lightning Strike",
+      "zh": "闪电攻击",
+      "zhSource": "d2rules/07b doc",
+      "row": 6,
+      "col": 2,
+      "listRow": 3,
+      "iconCel": 56,
+      "reqLevel": 30,
+      "maxLevel": 20,
+      "prereq": [
+       "Charged Strike"
+      ]
+     },
+     {
+      "id": "Lightning Fury",
+      "en": "Lightning Fury",
+      "zh": "雷霆之怒",
+      "zhSource": "d2rules/07b doc",
+      "row": 6,
+      "col": 3,
+      "listRow": 3,
+      "iconCel": 58,
+      "reqLevel": 30,
+      "maxLevel": 20,
+      "prereq": [
+       "Plague Javelin"
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ "sor": {
+  "class": "Sorceress",
+  "classZh": "法师",
+  "trees": [
+   {
+    "tree": "Fire Spells",
+    "treeZh": "火焰法术",
+    "key": "fire",
+    "skillPage": 1,
+    "imageSheet": "tree_sor_fire_page1.png",
+    "skills": [
+     {
+      "id": "Fire Bolt",
+      "en": "Fire Bolt",
+      "zh": "火焰弹",
+      "zhSource": "d2rules/07b doc",
+      "row": 1,
+      "col": 2,
+      "listRow": 1,
+      "iconCel": 0,
+      "reqLevel": 1,
+      "maxLevel": 20,
+      "prereq": []
+     },
+     {
+      "id": "Warmth",
+      "en": "Warmth",
+      "zh": "暖身术",
+      "zhSource": "d2rules/07b doc",
+      "row": 1,
+      "col": 3,
+      "listRow": 1,
+      "iconCel": 2,
+      "reqLevel": 1,
+      "maxLevel": 20,
+      "prereq": []
+     },
+     {
+      "id": "Inferno",
+      "en": "Inferno",
+      "zh": "地狱火",
+      "zhSource": "d2rules/07b doc",
+      "row": 2,
+      "col": 1,
+      "listRow": 1,
+      "iconCel": 10,
+      "reqLevel": 6,
+      "maxLevel": 20,
+      "prereq": []
+     },
+     {
+      "id": "Blaze",
+      "en": "Blaze",
+      "zh": "足跟火",
+      "zhSource": "d2rules/07b doc",
+      "row": 3,
+      "col": 1,
+      "listRow": 1,
+      "iconCel": 20,
+      "reqLevel": 12,
+      "maxLevel": 20,
+      "prereq": [
+       "Inferno"
+      ]
+     },
+     {
+      "id": "Fire Ball",
+      "en": "Fire Ball",
+      "zh": "火球术",
+      "zhSource": "d2rules/07b doc",
+      "row": 3,
+      "col": 2,
+      "listRow": 1,
+      "iconCel": 22,
+      "reqLevel": 12,
+      "maxLevel": 20,
+      "prereq": [
+       "Fire Bolt"
+      ]
+     },
+     {
+      "id": "Fire Wall",
+      "en": "Fire Wall",
+      "zh": "火焰墙",
+      "zhSource": "d2rules/07b doc",
+      "row": 4,
+      "col": 1,
+      "listRow": 1,
+      "iconCel": 30,
+      "reqLevel": 18,
+      "maxLevel": 20,
+      "prereq": [
+       "Blaze"
+      ]
+     },
+     {
+      "id": "Enchant",
+      "en": "Enchant",
+      "zh": "附魔火焰",
+      "zhSource": "d2rules/07b doc",
+      "row": 4,
+      "col": 3,
+      "listRow": 1,
+      "iconCel": 32,
+      "reqLevel": 18,
+      "maxLevel": 20,
+      "prereq": [
+       "Warmth",
+       "Fire Ball"
+      ]
+     },
+     {
+      "id": "Meteor",
+      "en": "Meteor",
+      "zh": "陨石术",
+      "zhSource": "d2rules/07b doc",
+      "row": 5,
+      "col": 2,
+      "listRow": 1,
+      "iconCel": 40,
+      "reqLevel": 24,
+      "maxLevel": 20,
+      "prereq": [
+       "Fire Ball",
+       "Fire Wall"
+      ]
+     },
+     {
+      "id": "Fire Mastery",
+      "en": "Fire Mastery",
+      "zh": "火系精通",
+      "zhSource": "d2rules/07b doc",
+      "row": 6,
+      "col": 2,
+      "listRow": 1,
+      "iconCel": 50,
+      "reqLevel": 30,
+      "maxLevel": 20,
+      "prereq": []
+     },
+     {
+      "id": "Hydra",
+      "en": "Hydra",
+      "zh": "多头蛇",
+      "zhSource": "d2rules/07b doc",
+      "row": 6,
+      "col": 3,
+      "listRow": 1,
+      "iconCel": 52,
+      "reqLevel": 30,
+      "maxLevel": 20,
+      "prereq": [
+       "Enchant"
+      ]
+     }
+    ]
+   },
+   {
+    "tree": "Lightning Spells",
+    "treeZh": "闪电法术",
+    "key": "lightning",
+    "skillPage": 2,
+    "imageSheet": "tree_sor_lightning_page2.png",
+    "skills": [
+     {
+      "id": "Charged Bolt",
+      "en": "Charged Bolt",
+      "zh": "电荷弹",
+      "zhSource": "d2rules/07b doc",
+      "row": 1,
+      "col": 2,
+      "listRow": 2,
+      "iconCel": 4,
+      "reqLevel": 1,
+      "maxLevel": 20,
+      "prereq": []
+     },
+     {
+      "id": "Static Field",
+      "en": "Static Field",
+      "zh": "静电场",
+      "zhSource": "d2rules/07b doc",
+      "row": 2,
+      "col": 1,
+      "listRow": 2,
+      "iconCel": 12,
+      "reqLevel": 6,
+      "maxLevel": 20,
+      "prereq": []
+     },
+     {
+      "id": "Telekinesis",
+      "en": "Telekinesis",
+      "zh": "心灵传动",
+      "zhSource": "d2rules/07b doc",
+      "row": 2,
+      "col": 3,
+      "listRow": 2,
+      "iconCel": 14,
+      "reqLevel": 6,
+      "maxLevel": 20,
+      "prereq": []
+     },
+     {
+      "id": "Nova",
+      "en": "Nova",
+      "zh": "闪电新星",
+      "zhSource": "d2rules/07b doc",
+      "row": 3,
+      "col": 1,
+      "listRow": 2,
+      "iconCel": 24,
+      "reqLevel": 12,
+      "maxLevel": 20,
+      "prereq": [
+       "Static Field"
+      ]
+     },
+     {
+      "id": "Lightning",
+      "en": "Lightning",
+      "zh": "闪电术",
+      "zhSource": "d2rules/07b doc",
+      "row": 3,
+      "col": 2,
+      "listRow": 2,
+      "iconCel": 26,
+      "reqLevel": 12,
+      "maxLevel": 20,
+      "prereq": [
+       "Charged Bolt"
+      ]
+     },
+     {
+      "id": "Chain Lightning",
+      "en": "Chain Lightning",
+      "zh": "连锁闪电",
+      "zhSource": "d2rules/07b doc",
+      "row": 4,
+      "col": 2,
+      "listRow": 2,
+      "iconCel": 34,
+      "reqLevel": 18,
+      "maxLevel": 20,
+      "prereq": [
+       "Lightning"
+      ]
+     },
+     {
+      "id": "Teleport",
+      "en": "Teleport",
+      "zh": "传送术",
+      "zhSource": "d2rules/07b doc",
+      "row": 4,
+      "col": 3,
+      "listRow": 2,
+      "iconCel": 36,
+      "reqLevel": 18,
+      "maxLevel": 20,
+      "prereq": [
+       "Telekinesis"
+      ]
+     },
+     {
+      "id": "Thunder Storm",
+      "en": "Thunder Storm",
+      "zh": "雷暴术",
+      "zhSource": "skill_names_zh.json",
+      "row": 5,
+      "col": 1,
+      "listRow": 2,
+      "iconCel": 42,
+      "reqLevel": 24,
+      "maxLevel": 20,
+      "prereq": [
+       "Nova",
+       "Chain Lightning"
+      ]
+     },
+     {
+      "id": "Energy Shield",
+      "en": "Energy Shield",
+      "zh": "能量盾",
+      "zhSource": "d2rules/07b doc",
+      "row": 5,
+      "col": 3,
+      "listRow": 2,
+      "iconCel": 44,
+      "reqLevel": 24,
+      "maxLevel": 20,
+      "prereq": [
+       "Teleport",
+       "Chain Lightning"
+      ]
+     },
+     {
+      "id": "Lightning Mastery",
+      "en": "Lightning Mastery",
+      "zh": "雷系精通",
+      "zhSource": "d2rules/07b doc",
+      "row": 6,
+      "col": 2,
+      "listRow": 2,
+      "iconCel": 54,
+      "reqLevel": 30,
+      "maxLevel": 20,
+      "prereq": []
+     }
+    ]
+   },
+   {
+    "tree": "Cold Spells",
+    "treeZh": "冰冻法术",
+    "key": "cold",
+    "skillPage": 3,
+    "imageSheet": "tree_sor_cold_page3.png",
+    "skills": [
+     {
+      "id": "Ice Bolt",
+      "en": "Ice Bolt",
+      "zh": "冰霜弹",
+      "zhSource": "skill_names_zh.json",
+      "row": 1,
+      "col": 2,
+      "listRow": 3,
+      "iconCel": 6,
+      "reqLevel": 1,
+      "maxLevel": 20,
+      "prereq": []
+     },
+     {
+      "id": "Frozen Armor",
+      "en": "Frozen Armor",
+      "zh": "冰封甲",
+      "zhSource": "d2rules/07b doc",
+      "row": 1,
+      "col": 3,
+      "listRow": 3,
+      "iconCel": 8,
+      "reqLevel": 1,
+      "maxLevel": 20,
+      "prereq": []
+     },
+     {
+      "id": "Frost Nova",
+      "en": "Frost Nova",
+      "zh": "冰霜新星",
+      "zhSource": "d2rules/07b doc",
+      "row": 2,
+      "col": 1,
+      "listRow": 3,
+      "iconCel": 16,
+      "reqLevel": 6,
+      "maxLevel": 20,
+      "prereq": []
+     },
+     {
+      "id": "Ice Blast",
+      "en": "Ice Blast",
+      "zh": "冰球爆",
+      "zhSource": "d2rules/07b doc",
+      "row": 2,
+      "col": 2,
+      "listRow": 3,
+      "iconCel": 18,
+      "reqLevel": 6,
+      "maxLevel": 20,
+      "prereq": [
+       "Ice Bolt"
+      ]
+     },
+     {
+      "id": "Shiver Armor",
+      "en": "Shiver Armor",
+      "zh": "碎冰甲",
+      "zhSource": "skill_names_zh.json",
+      "row": 3,
+      "col": 3,
+      "listRow": 3,
+      "iconCel": 28,
+      "reqLevel": 12,
+      "maxLevel": 20,
+      "prereq": [
+       "Ice Blast",
+       "Frozen Armor"
+      ]
+     },
+     {
+      "id": "Glacial Spike",
+      "en": "Glacial Spike",
+      "zh": "冰尖柱",
+      "zhSource": "d2rules/07b doc",
+      "row": 4,
+      "col": 2,
+      "listRow": 3,
+      "iconCel": 38,
+      "reqLevel": 18,
+      "maxLevel": 20,
+      "prereq": [
+       "Ice Blast"
+      ]
+     },
+     {
+      "id": "Blizzard",
+      "en": "Blizzard",
+      "zh": "暴风雪",
+      "zhSource": "d2rules/07b doc",
+      "row": 5,
+      "col": 1,
+      "listRow": 3,
+      "iconCel": 46,
+      "reqLevel": 24,
+      "maxLevel": 20,
+      "prereq": [
+       "Frost Nova",
+       "Glacial Spike"
+      ]
+     },
+     {
+      "id": "Chilling Armor",
+      "en": "Chilling Armor",
+      "zh": "冰棱甲",
+      "zhSource": "d2rules/07b doc",
+      "row": 5,
+      "col": 3,
+      "listRow": 3,
+      "iconCel": 48,
+      "reqLevel": 24,
+      "maxLevel": 20,
+      "prereq": [
+       "Shiver Armor"
+      ]
+     },
+     {
+      "id": "Frozen Orb",
+      "en": "Frozen Orb",
+      "zh": "冰封球",
+      "zhSource": "d2rules/07b doc",
+      "row": 6,
+      "col": 1,
+      "listRow": 3,
+      "iconCel": 56,
+      "reqLevel": 30,
+      "maxLevel": 20,
+      "prereq": [
+       "Blizzard"
+      ]
+     },
+     {
+      "id": "Cold Mastery",
+      "en": "Cold Mastery",
+      "zh": "冰系精通",
+      "zhSource": "d2rules/07b doc",
+      "row": 6,
+      "col": 2,
+      "listRow": 3,
+      "iconCel": 58,
+      "reqLevel": 30,
+      "maxLevel": 20,
+      "prereq": []
+     }
+    ]
+   }
+  ]
+ },
+ "pal": {
+  "class": "Paladin",
+  "classZh": "圣骑士",
+  "trees": [
+   {
+    "tree": "Combat Skills",
+    "treeZh": "战斗技能",
+    "key": "combat",
+    "skillPage": 1,
+    "imageSheet": "tree_pal_combat_page1.png",
+    "skills": [
+     {
+      "id": "Sacrifice",
+      "en": "Sacrifice",
+      "zh": "牺牲",
+      "zhSource": "d2rules/07b doc",
+      "row": 1,
+      "col": 1,
+      "listRow": 1,
+      "iconCel": 0,
+      "reqLevel": 1,
+      "maxLevel": 20,
+      "prereq": []
+     },
+     {
+      "id": "Smite",
+      "en": "Smite",
+      "zh": "盾击",
+      "zhSource": "skill_names_zh.json",
+      "row": 1,
+      "col": 3,
+      "listRow": 1,
+      "iconCel": 2,
+      "reqLevel": 1,
+      "maxLevel": 20,
+      "prereq": []
+     },
+     {
+      "id": "Holy Bolt",
+      "en": "Holy Bolt",
+      "zh": "圣光弹",
+      "zhSource": "d2rules/07b doc",
+      "row": 2,
+      "col": 2,
+      "listRow": 1,
+      "iconCel": 10,
+      "reqLevel": 6,
+      "maxLevel": 20,
+      "prereq": []
+     },
+     {
+      "id": "Zeal",
+      "en": "Zeal",
+      "zh": "热忱",
+      "zhSource": "skill_names_zh.json",
+      "row": 3,
+      "col": 1,
+      "listRow": 1,
+      "iconCel": 20,
+      "reqLevel": 12,
+      "maxLevel": 20,
+      "prereq": [
+       "Sacrifice"
+      ]
+     },
+     {
+      "id": "Charge",
+      "en": "Charge",
+      "zh": "冲锋",
+      "zhSource": "skill_names_zh.json",
+      "row": 3,
+      "col": 3,
+      "listRow": 1,
+      "iconCel": 22,
+      "reqLevel": 12,
+      "maxLevel": 20,
+      "prereq": [
+       "Smite"
+      ]
+     },
+     {
+      "id": "Vengeance",
+      "en": "Vengeance",
+      "zh": "复仇",
+      "zhSource": "d2rules/07b doc",
+      "row": 4,
+      "col": 1,
+      "listRow": 1,
+      "iconCel": 40,
+      "reqLevel": 18,
+      "maxLevel": 20,
+      "prereq": [
+       "Zeal"
+      ]
+     },
+     {
+      "id": "Blessed Hammer",
+      "en": "Blessed Hammer",
+      "zh": "祝福之锤",
+      "zhSource": "skill_names_zh.json",
+      "row": 4,
+      "col": 2,
+      "listRow": 1,
+      "iconCel": 32,
+      "reqLevel": 18,
+      "maxLevel": 20,
+      "prereq": [
+       "Holy Bolt"
+      ]
+     },
+     {
+      "id": "Conversion",
+      "en": "Conversion",
+      "zh": "圣光转化",
+      "zhSource": "skill_names_zh.json",
+      "row": 5,
+      "col": 1,
+      "listRow": 1,
+      "iconCel": 30,
+      "reqLevel": 24,
+      "maxLevel": 20,
+      "prereq": [
+       "Vengeance"
+      ]
+     },
+     {
+      "id": "Holy Shield",
+      "en": "Holy Shield",
+      "zh": "圣盾术",
+      "zhSource": "skill_names_zh.json",
+      "row": 5,
+      "col": 3,
+      "listRow": 1,
+      "iconCel": 42,
+      "reqLevel": 24,
+      "maxLevel": 20,
+      "prereq": [
+       "Charge",
+       "Blessed Hammer"
+      ]
+     },
+     {
+      "id": "Fist of the Heavens",
+      "en": "Fist of the Heavens",
+      "zh": "天堂之拳",
+      "zhSource": "d2rules/07b doc",
+      "row": 6,
+      "col": 2,
+      "listRow": 1,
+      "iconCel": 50,
+      "reqLevel": 30,
+      "maxLevel": 20,
+      "prereq": [
+       "Blessed Hammer",
+       "Conversion"
+      ]
+     }
+    ]
+   },
+   {
+    "tree": "Offensive Auras",
+    "treeZh": "进攻光环",
+    "key": "offensive",
+    "skillPage": 2,
+    "imageSheet": "tree_pal_offensive_page2.png",
+    "skills": [
+     {
+      "id": "Might",
+      "en": "Might",
+      "zh": "力量",
+      "zhSource": "skill_names_zh.json",
+      "row": 1,
+      "col": 1,
+      "listRow": 2,
+      "iconCel": 4,
+      "reqLevel": 1,
+      "maxLevel": 20,
+      "prereq": []
+     },
+     {
+      "id": "Holy Fire",
+      "en": "Holy Fire",
+      "zh": "神圣之火",
+      "zhSource": "d2rules/07b doc",
+      "row": 2,
+      "col": 2,
+      "listRow": 2,
+      "iconCel": 12,
+      "reqLevel": 6,
+      "maxLevel": 20,
+      "prereq": [
+       "Might"
+      ]
+     },
+     {
+      "id": "Thorns",
+      "en": "Thorns",
+      "zh": "荆棘",
+      "zhSource": "d2rules/07b doc",
+      "row": 2,
+      "col": 3,
+      "listRow": 2,
+      "iconCel": 14,
+      "reqLevel": 6,
+      "maxLevel": 20,
+      "prereq": []
+     },
+     {
+      "id": "Blessed Aim",
+      "en": "Blessed Aim",
+      "zh": "祝福瞄准",
+      "zhSource": "skill_names_zh.json",
+      "row": 3,
+      "col": 1,
+      "listRow": 2,
+      "iconCel": 24,
+      "reqLevel": 12,
+      "maxLevel": 20,
+      "prereq": [
+       "Might"
+      ]
+     },
+     {
+      "id": "Concentration",
+      "en": "Concentration",
+      "zh": "专注",
+      "zhSource": "skill_names_zh.json",
+      "row": 4,
+      "col": 1,
+      "listRow": 2,
+      "iconCel": 34,
+      "reqLevel": 18,
+      "maxLevel": 20,
+      "prereq": [
+       "Blessed Aim"
+      ]
+     },
+     {
+      "id": "Holy Freeze",
+      "en": "Holy Freeze",
+      "zh": "神圣之冰",
+      "zhSource": "d2rules/07b doc",
+      "row": 4,
+      "col": 2,
+      "listRow": 2,
+      "iconCel": 36,
+      "reqLevel": 18,
+      "maxLevel": 20,
+      "prereq": [
+       "Holy Fire"
+      ]
+     },
+     {
+      "id": "Holy Shock",
+      "en": "Holy Shock",
+      "zh": "神圣之雷",
+      "zhSource": "d2rules/07b doc",
+      "row": 5,
+      "col": 2,
+      "listRow": 2,
+      "iconCel": 44,
+      "reqLevel": 24,
+      "maxLevel": 20,
+      "prereq": [
+       "Holy Freeze"
+      ]
+     },
+     {
+      "id": "Sanctuary",
+      "en": "Sanctuary",
+      "zh": "庇护之光",
+      "zhSource": "d2rules/07b doc",
+      "row": 5,
+      "col": 3,
+      "listRow": 2,
+      "iconCel": 46,
+      "reqLevel": 24,
+      "maxLevel": 20,
+      "prereq": [
+       "Thorns",
+       "Holy Freeze"
+      ]
+     },
+     {
+      "id": "Fanaticism",
+      "en": "Fanaticism",
+      "zh": "狂热",
+      "zhSource": "skill_names_zh.json",
+      "row": 6,
+      "col": 1,
+      "listRow": 2,
+      "iconCel": 52,
+      "reqLevel": 30,
+      "maxLevel": 20,
+      "prereq": [
+       "Concentration"
+      ]
+     },
+     {
+      "id": "Conviction",
+      "en": "Conviction",
+      "zh": "定罪",
+      "zhSource": "skill_names_zh.json",
+      "row": 6,
+      "col": 3,
+      "listRow": 2,
+      "iconCel": 56,
+      "reqLevel": 30,
+      "maxLevel": 20,
+      "prereq": [
+       "Sanctuary"
+      ]
+     }
+    ]
+   },
+   {
+    "tree": "Defensive Auras",
+    "treeZh": "防御光环",
+    "key": "defensive",
+    "skillPage": 3,
+    "imageSheet": "tree_pal_defensive_page3.png",
+    "skills": [
+     {
+      "id": "Prayer",
+      "en": "Prayer",
+      "zh": "祈祷",
+      "zhSource": "skill_names_zh.json",
+      "row": 1,
+      "col": 1,
+      "listRow": 3,
+      "iconCel": 6,
+      "reqLevel": 1,
+      "maxLevel": 20,
+      "prereq": []
+     },
+     {
+      "id": "Resist Fire",
+      "en": "Resist Fire",
+      "zh": "抗火",
+      "zhSource": "skill_names_zh.json",
+      "row": 1,
+      "col": 3,
+      "listRow": 3,
+      "iconCel": 8,
+      "reqLevel": 1,
+      "maxLevel": 20,
+      "prereq": []
+     },
+     {
+      "id": "Defiance",
+      "en": "Defiance",
+      "zh": "反抗",
+      "zhSource": "skill_names_zh.json",
+      "row": 2,
+      "col": 2,
+      "listRow": 3,
+      "iconCel": 16,
+      "reqLevel": 6,
+      "maxLevel": 20,
+      "prereq": []
+     },
+     {
+      "id": "Resist Cold",
+      "en": "Resist Cold",
+      "zh": "抗冰",
+      "zhSource": "skill_names_zh.json",
+      "row": 2,
+      "col": 3,
+      "listRow": 3,
+      "iconCel": 18,
+      "reqLevel": 6,
+      "maxLevel": 20,
+      "prereq": []
+     },
+     {
+      "id": "Cleansing",
+      "en": "Cleansing",
+      "zh": "净化",
+      "zhSource": "skill_names_zh.json",
+      "row": 3,
+      "col": 1,
+      "listRow": 3,
+      "iconCel": 38,
+      "reqLevel": 12,
+      "maxLevel": 20,
+      "prereq": [
+       "Prayer"
+      ]
+     },
+     {
+      "id": "Resist Lightning",
+      "en": "Resist Lightning",
+      "zh": "抗雷",
+      "zhSource": "d2rules/07b doc",
+      "row": 3,
+      "col": 3,
+      "listRow": 3,
+      "iconCel": 28,
+      "reqLevel": 12,
+      "maxLevel": 20,
+      "prereq": []
+     },
+     {
+      "id": "Vigor",
+      "en": "Vigor",
+      "zh": "精力",
+      "zhSource": "d2rules/07b doc",
+      "row": 4,
+      "col": 2,
+      "listRow": 3,
+      "iconCel": 26,
+      "reqLevel": 18,
+      "maxLevel": 20,
+      "prereq": [
+       "Cleansing",
+       "Defiance"
+      ]
+     },
+     {
+      "id": "Meditation",
+      "en": "Meditation",
+      "zh": "冥思",
+      "zhSource": "d2rules/07b doc",
+      "row": 5,
+      "col": 1,
+      "listRow": 3,
+      "iconCel": 48,
+      "reqLevel": 24,
+      "maxLevel": 20,
+      "prereq": [
+       "Cleansing"
+      ]
+     },
+     {
+      "id": "Redemption",
+      "en": "Redemption",
+      "zh": "救赎",
+      "zhSource": "d2rules/07b doc",
+      "row": 6,
+      "col": 2,
+      "listRow": 3,
+      "iconCel": 54,
+      "reqLevel": 30,
+      "maxLevel": 20,
+      "prereq": [
+       "Vigor"
+      ]
+     },
+     {
+      "id": "Salvation",
+      "en": "Salvation",
+      "zh": "拯救",
+      "zhSource": "skill_names_zh.json",
+      "row": 6,
+      "col": 3,
+      "listRow": 3,
+      "iconCel": 58,
+      "reqLevel": 30,
+      "maxLevel": 20,
+      "prereq": []
+     }
+    ]
+   }
+  ]
+ },
+ "bar": {
+  "class": "Barbarian",
+  "classZh": "野蛮人",
+  "trees": [
+   {
+    "tree": "Combat Skills",
+    "treeZh": "战斗技能",
+    "key": "combat",
+    "skillPage": 1,
+    "imageSheet": "tree_bar_combat_page1.png",
+    "skills": [
+     {
+      "id": "Bash",
+      "en": "Bash",
+      "zh": "猛击",
+      "zhSource": "skill_names_zh.json",
+      "row": 1,
+      "col": 2,
+      "listRow": 1,
+      "iconCel": 0,
+      "reqLevel": 1,
+      "maxLevel": 20,
+      "prereq": []
+     },
+     {
+      "id": "Leap",
+      "en": "Leap",
+      "zh": "跳斩",
+      "zhSource": "d2rules/07b doc",
+      "row": 2,
+      "col": 1,
+      "listRow": 1,
+      "iconCel": 12,
+      "reqLevel": 6,
+      "maxLevel": 20,
+      "prereq": []
+     },
+     {
+      "id": "Double Swing",
+      "en": "Double Swing",
+      "zh": "双手挥击",
+      "zhSource": "skill_names_zh.json",
+      "row": 2,
+      "col": 3,
+      "listRow": 1,
+      "iconCel": 14,
+      "reqLevel": 6,
+      "maxLevel": 20,
+      "prereq": [
+       "Bash"
+      ]
+     },
+     {
+      "id": "Stun",
+      "en": "Stun",
+      "zh": "击昏",
+      "zhSource": "skill_names_zh.json",
+      "row": 3,
+      "col": 2,
+      "listRow": 1,
+      "iconCel": 26,
+      "reqLevel": 12,
+      "maxLevel": 20,
+      "prereq": [
+       "Bash"
+      ]
+     },
+     {
+      "id": "Double Throw",
+      "en": "Double Throw",
+      "zh": "双手投掷",
+      "zhSource": "skill_names_zh.json",
+      "row": 3,
+      "col": 3,
+      "listRow": 1,
+      "iconCel": 28,
+      "reqLevel": 12,
+      "maxLevel": 20,
+      "prereq": [
+       "Double Swing"
+      ]
+     },
+     {
+      "id": "Leap Attack",
+      "en": "Leap Attack",
+      "zh": "腾空斩",
+      "zhSource": "skill_names_zh.json",
+      "row": 4,
+      "col": 1,
+      "listRow": 1,
+      "iconCel": 34,
+      "reqLevel": 18,
+      "maxLevel": 20,
+      "prereq": [
+       "Leap"
+      ]
+     },
+     {
+      "id": "Concentrate",
+      "en": "Concentrate",
+      "zh": "专注",
+      "zhSource": "skill_names_zh.json",
+      "row": 4,
+      "col": 2,
+      "listRow": 1,
+      "iconCel": 36,
+      "reqLevel": 18,
+      "maxLevel": 20,
+      "prereq": [
+       "Stun"
+      ]
+     },
+     {
+      "id": "Frenzy",
+      "en": "Frenzy",
+      "zh": "狂乱",
+      "zhSource": "skill_names_zh.json",
+      "row": 5,
+      "col": 3,
+      "listRow": 1,
+      "iconCel": 42,
+      "reqLevel": 24,
+      "maxLevel": 20,
+      "prereq": [
+       "Double Throw"
+      ]
+     },
+     {
+      "id": "Whirlwind",
+      "en": "Whirlwind",
+      "zh": "旋风斩",
+      "zhSource": "d2rules/07b doc",
+      "row": 6,
+      "col": 1,
+      "listRow": 1,
+      "iconCel": 50,
+      "reqLevel": 30,
+      "maxLevel": 20,
+      "prereq": [
+       "Leap Attack",
+       "Concentrate"
+      ]
+     },
+     {
+      "id": "Berserk",
+      "en": "Berserk",
+      "zh": "狂战士",
+      "zhSource": "skill_names_zh.json",
+      "row": 6,
+      "col": 2,
+      "listRow": 1,
+      "iconCel": 52,
+      "reqLevel": 30,
+      "maxLevel": 20,
+      "prereq": [
+       "Concentrate"
+      ]
+     }
+    ]
+   },
+   {
+    "tree": "Combat Masteries",
+    "treeZh": "战斗精通",
+    "key": "masteries",
+    "skillPage": 2,
+    "imageSheet": "tree_bar_masteries_page2.png",
+    "skills": [
+     {
+      "id": "Blade Mastery",
+      "en": "Blade Mastery",
+      "zh": "刀剑精通",
+      "zhSource": "d2rules/07b doc",
+      "row": 1,
+      "col": 1,
+      "listRow": 2,
+      "iconCel": 2,
+      "reqLevel": 1,
+      "maxLevel": 20,
+      "prereq": []
+     },
+     {
+      "id": "Axe Mastery",
+      "en": "Axe Mastery",
+      "zh": "斧类精通",
+      "zhSource": "skill_names_zh.json",
+      "row": 1,
+      "col": 2,
+      "listRow": 2,
+      "iconCel": 4,
+      "reqLevel": 1,
+      "maxLevel": 20,
+      "prereq": []
+     },
+     {
+      "id": "Mace Mastery",
+      "en": "Mace Mastery",
+      "zh": "锤类精通",
+      "zhSource": "d2rules/07b doc",
+      "row": 1,
+      "col": 3,
+      "listRow": 2,
+      "iconCel": 6,
+      "reqLevel": 1,
+      "maxLevel": 20,
+      "prereq": []
+     },
+     {
+      "id": "Pole Arm Mastery",
+      "en": "Pole Arm Mastery",
+      "zh": "长柄精通",
+      "zhSource": "skill_names_zh.json",
+      "row": 2,
+      "col": 1,
+      "listRow": 2,
+      "iconCel": 16,
+      "reqLevel": 6,
+      "maxLevel": 20,
+      "prereq": []
+     },
+     {
+      "id": "Throwing Mastery",
+      "en": "Throwing Mastery",
+      "zh": "投掷精通",
+      "zhSource": "skill_names_zh.json",
+      "row": 2,
+      "col": 2,
+      "listRow": 2,
+      "iconCel": 18,
+      "reqLevel": 6,
+      "maxLevel": 20,
+      "prereq": []
+     },
+     {
+      "id": "Spear Mastery",
+      "en": "Spear Mastery",
+      "zh": "长矛精通",
+      "zhSource": "skill_names_zh.json",
+      "row": 2,
+      "col": 3,
+      "listRow": 2,
+      "iconCel": 20,
+      "reqLevel": 6,
+      "maxLevel": 20,
+      "prereq": []
+     },
+     {
+      "id": "Increased Stamina",
+      "en": "Increased Stamina",
+      "zh": "增强耐力",
+      "zhSource": "skill_names_zh.json",
+      "row": 3,
+      "col": 1,
+      "listRow": 2,
+      "iconCel": 30,
+      "reqLevel": 12,
+      "maxLevel": 20,
+      "prereq": []
+     },
+     {
+      "id": "Iron Skin",
+      "en": "Iron Skin",
+      "zh": "钢铁之肤",
+      "zhSource": "skill_names_zh.json",
+      "row": 4,
+      "col": 3,
+      "listRow": 2,
+      "iconCel": 38,
+      "reqLevel": 18,
+      "maxLevel": 20,
+      "prereq": []
+     },
+     {
+      "id": "Increased Speed",
+      "en": "Increased Speed",
+      "zh": "增强速度",
+      "zhSource": "skill_names_zh.json",
+      "row": 5,
+      "col": 1,
+      "listRow": 2,
+      "iconCel": 44,
+      "reqLevel": 24,
+      "maxLevel": 20,
+      "prereq": [
+       "Increased Stamina"
+      ]
+     },
+     {
+      "id": "Natural Resistance",
+      "en": "Natural Resistance",
+      "zh": "自然抗性",
+      "zhSource": "skill_names_zh.json",
+      "row": 6,
+      "col": 3,
+      "listRow": 2,
+      "iconCel": 54,
+      "reqLevel": 30,
+      "maxLevel": 20,
+      "prereq": [
+       "Iron Skin"
+      ]
+     }
+    ]
+   },
+   {
+    "tree": "Warcries",
+    "treeZh": "战吼",
+    "key": "warcries",
+    "skillPage": 3,
+    "imageSheet": "tree_bar_warcries_page3.png",
+    "skills": [
+     {
+      "id": "Howl",
+      "en": "Howl",
+      "zh": "狂嗥",
+      "zhSource": "skill_names_zh.json",
+      "row": 1,
+      "col": 1,
+      "listRow": 3,
+      "iconCel": 8,
+      "reqLevel": 1,
+      "maxLevel": 20,
+      "prereq": []
+     },
+     {
+      "id": "Find Potion",
+      "en": "Find Potion",
+      "zh": "寻药",
+      "zhSource": "d2rules/07b doc",
+      "row": 1,
+      "col": 3,
+      "listRow": 3,
+      "iconCel": 10,
+      "reqLevel": 1,
+      "maxLevel": 20,
+      "prereq": []
+     },
+     {
+      "id": "Taunt",
+      "en": "Taunt",
+      "zh": "嘲讽",
+      "zhSource": "skill_names_zh.json",
+      "row": 2,
+      "col": 1,
+      "listRow": 3,
+      "iconCel": 22,
+      "reqLevel": 6,
+      "maxLevel": 20,
+      "prereq": [
+       "Howl"
+      ]
+     },
+     {
+      "id": "Shout",
+      "en": "Shout",
+      "zh": "大吼",
+      "zhSource": "skill_names_zh.json",
+      "row": 2,
+      "col": 2,
+      "listRow": 3,
+      "iconCel": 24,
+      "reqLevel": 6,
+      "maxLevel": 20,
+      "prereq": [
+       "Howl"
+      ]
+     },
+     {
+      "id": "Find Item",
+      "en": "Find Item",
+      "zh": "寻物",
+      "zhSource": "d2rules/07b doc",
+      "row": 3,
+      "col": 3,
+      "listRow": 3,
+      "iconCel": 32,
+      "reqLevel": 12,
+      "maxLevel": 20,
+      "prereq": [
+       "Find Potion"
+      ]
+     },
+     {
+      "id": "Battle Cry",
+      "en": "Battle Cry",
+      "zh": "战嗥",
+      "zhSource": "skill_names_zh.json",
+      "row": 4,
+      "col": 1,
+      "listRow": 3,
+      "iconCel": 40,
+      "reqLevel": 18,
+      "maxLevel": 20,
+      "prereq": [
+       "Taunt"
+      ]
+     },
+     {
+      "id": "Battle Orders",
+      "en": "Battle Orders",
+      "zh": "战斗号令",
+      "zhSource": "d2rules/07b doc",
+      "row": 5,
+      "col": 2,
+      "listRow": 3,
+      "iconCel": 46,
+      "reqLevel": 24,
+      "maxLevel": 20,
+      "prereq": [
+       "Shout"
+      ]
+     },
+     {
+      "id": "Grim Ward",
+      "en": "Grim Ward",
+      "zh": "骇物阻吓",
+      "zhSource": "d2rules/07b doc",
+      "row": 5,
+      "col": 3,
+      "listRow": 3,
+      "iconCel": 48,
+      "reqLevel": 24,
+      "maxLevel": 20,
+      "prereq": [
+       "Find Item"
+      ]
+     },
+     {
+      "id": "War Cry",
+      "en": "War Cry",
+      "zh": "怒嗥",
+      "zhSource": "skill_names_zh.json",
+      "row": 6,
+      "col": 1,
+      "listRow": 3,
+      "iconCel": 56,
+      "reqLevel": 30,
+      "maxLevel": 20,
+      "prereq": [
+       "Battle Cry",
+       "Battle Orders"
+      ]
+     },
+     {
+      "id": "Battle Command",
+      "en": "Battle Command",
+      "zh": "战斗指挥",
+      "zhSource": "d2rules/07b doc",
+      "row": 6,
+      "col": 2,
+      "listRow": 3,
+      "iconCel": 58,
+      "reqLevel": 30,
+      "maxLevel": 20,
+      "prereq": [
+       "Battle Orders"
+      ]
+     }
+    ]
+   }
+  ]
+ }
+}

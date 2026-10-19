@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256" role="img" aria-label="野蛮人职业图腾">
+  <title>野蛮人职业图腾</title>
+  <desc>Barbarian totem: axe and skull crest</desc>
+  <defs>
+    <linearGradient id="plate" x1="0" y1="0" x2="0.35" y2="1"><stop offset="0" stop-color="#1d2530" stop-opacity="1"/><stop offset="0.45" stop-color="#161b22" stop-opacity="1"/><stop offset="1" stop-color="#0f1419" stop-opacity="1"/></linearGradient>
+    <linearGradient id="rim" x1="0.1" y1="0" x2="0.9" y2="1"><stop offset="0" stop-color="#a9b8c9" stop-opacity="1"/><stop offset="0.35" stop-color="#5c6874" stop-opacity="1"/><stop offset="0.72" stop-color="#39434f" stop-opacity="1"/><stop offset="1" stop-color="#8d9bab" stop-opacity="1"/></linearGradient>
+    <linearGradient id="rivet" x1="0.15" y1="0" x2="0.85" y2="1"><stop offset="0" stop-color="#e2d296" stop-opacity="1"/><stop offset="0.5" stop-color="#8a7326" stop-opacity="1"/><stop offset="1" stop-color="#3d3312" stop-opacity="1"/></linearGradient>
+    <linearGradient id="axehead" x1="0" y1="0.05" x2="1" y2="0.95"><stop offset="0" stop-color="#cdd6e0" stop-opacity="1"/><stop offset="0.26" stop-color="#98a5b4" stop-opacity="1"/><stop offset="0.58" stop-color="#5d6a78" stop-opacity="1"/><stop offset="1" stop-color="#333d48" stop-opacity="1"/></linearGradient>
+    <linearGradient id="edge" x1="0" y1="0" x2="0.85" y2="1"><stop offset="0" stop-color="#ffffff" stop-opacity="1"/><stop offset="0.3" stop-color="#e4ecf4" stop-opacity="1"/><stop offset="0.7" stop-color="#a9b6c4" stop-opacity="1"/><stop offset="1" stop-color="#6c7986" stop-opacity="1"/></linearGradient>
+    <linearGradient id="haft" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#9a7c52" stop-opacity="1"/><stop offset="0.3" stop-color="#6a5436" stop-opacity="1"/><stop offset="1" stop-color="#2f2517" stop-opacity="1"/></linearGradient>
+    <linearGradient id="skullg" x1="0.05" y1="0" x2="0.8" y2="1"><stop offset="0" stop-color="#f0ebdc" stop-opacity="1"/><stop offset="0.34" stop-color="#cfc7b0" stop-opacity="1"/><stop offset="0.7" stop-color="#9a927b" stop-opacity="1"/><stop offset="1" stop-color="#6b6553" stop-opacity="1"/></linearGradient>
+  </defs>
+  <!-- Barbarian totem: axe and skull crest -->
+  <rect x="9.00" y="9.00" width="238.00" height="238.00" rx="30" fill="url(#rim)"/>
+  <rect x="13.00" y="13.00" width="230.00" height="230.00" rx="27" fill="url(#plate)"/>
+  <rect x="13.00" y="13.00" width="230.00" height="230.00" rx="27" fill="none" stroke="#0b0f13" stroke-width="3" stroke-opacity="0.85"/>
+  <rect x="24.00" y="24.00" width="208.00" height="208.00" rx="20" fill="none" stroke="#232b35" stroke-width="1.6" stroke-opacity="0.95"/>
+  <rect x="28.00" y="28.00" width="200.00" height="200.00" rx="17" fill="none" stroke="#c07a34" stroke-width="2" stroke-opacity="0.5"/>
+  <circle cx="28.00" cy="28.00" r="4.80" fill="#0b0f13"/>
+  <circle cx="28.00" cy="28.00" r="3.10" fill="url(#rivet)"/>
+  <circle cx="27.00" cy="26.90" r="1.20" fill="#9fb0c4" fill-opacity="0.65"/>
+  <circle cx="228.00" cy="28.00" r="4.80" fill="#0b0f13"/>
+  <circle cx="228.00" cy="28.00" r="3.10" fill="url(#rivet)"/>
+  <circle cx="227.00" cy="26.90" r="1.20" fill="#9fb0c4" fill-opacity="0.65"/>
+  <circle cx="28.00" cy="228.00" r="4.80" fill="#0b0f13"/>
+  <circle cx="28.00" cy="228.00" r="3.10" fill="url(#rivet)"/>
+  <circle cx="27.00" cy="226.90" r="1.20" fill="#9fb0c4" fill-opacity="0.65"/>
+  <circle cx="228.00" cy="228.00" r="4.80" fill="#0b0f13"/>
+  <circle cx="228.00" cy="228.00" r="3.10" fill="url(#rivet)"/>
+  <circle cx="227.00" cy="226.90" r="1.20" fill="#9fb0c4" fill-opacity="0.65"/>
+  <polygon points="118.00,9.00 138.00,9.00 128.00,19.00" fill="#c07a34" fill-opacity="0.95"/>
+  <polygon points="118.00,247.00 138.00,247.00 128.00,237.00" fill="#c07a34" fill-opacity="0.95"/>
+  <rect x="112.00" y="84.00" width="17.00" height="134.00" rx="7" fill="url(#haft)"/>
+  <rect x="112.00" y="84.00" width="17.00" height="134.00" rx="7" fill="none" stroke="#0b0f13" stroke-width="2.2" stroke-opacity="0.9"/>
+  <rect x="112.00" y="84.00" width="4.50" height="134.00" rx="2" fill="#d0b183" fill-opacity="0.22"/>
+  <rect x="106.00" y="88.00" width="14.00" height="168.00" rx="6" fill="url(#haft)" transform="rotate(45 113 172)"/>
+  <rect x="106.00" y="88.00" width="14.00" height="168.00" rx="6" fill="none" stroke="#0b0f13" stroke-width="2.2" stroke-opacity="0.9" transform="rotate(45 113 172)"/>
+  <rect x="106.00" y="88.00" width="4.50" height="168.00" rx="2" fill="#d0b183" fill-opacity="0.22" transform="rotate(45 113 172)"/>
+  <polygon points="112.00,118.00 168.00,92.00 196.00,92.00 220.00,108.00 234.00,136.00 232.00,164.00 216.00,186.00 194.00,190.00 172.00,182.00 152.00,164.00 136.00,142.00" fill="url(#axehead)"/>
+  <polygon points="112.00,118.00 168.00,92.00 196.00,92.00 220.00,108.00 234.00,136.00 232.00,164.00 216.00,186.00 194.00,190.00 172.00,182.00 152.00,164.00 136.00,142.00" fill="none" stroke="#0b0f13" stroke-width="3.4" stroke-opacity="0.92"/>
+  <polygon points="220.00,108.00 234.00,136.00 232.00,164.00 216.00,186.00 194.00,190.00 193.00,181.00 208.00,178.00 221.00,160.00 223.00,137.00 211.00,113.00" fill="url(#edge)" fill-opacity="0.96"/>
+  <polygon points="220.00,108.00 234.00,136.00 232.00,164.00 216.00,186.00 194.00,190.00 193.00,181.00 208.00,178.00 221.00,160.00 223.00,137.00 211.00,113.00" fill="none" stroke="#0b0f13" stroke-width="1.2" stroke-opacity="0.3"/>
+  <polygon points="112.00,118.00 168.00,92.00 162.00,106.00 124.00,128.00" fill="#ffffff" fill-opacity="0.26"/>
+  <polygon points="156.00,128.00 192.00,132.00 204.00,154.00 188.00,160.00 160.00,146.00" fill="#ffffff" fill-opacity="0.12"/>
+  <polygon points="140.00,132.00 160.00,150.00 172.00,170.00 154.00,158.00 140.00,144.00" fill="#0b0f13" fill-opacity="0.22"/>
+  <rect x="100.00" y="112.00" width="26.00" height="30.00" rx="4" fill="#39434f" transform="rotate(45 113 127)"/>
+  <rect x="100.00" y="112.00" width="26.00" height="30.00" rx="4" fill="none" stroke="#0b0f13" stroke-width="2.6" stroke-opacity="0.88" transform="rotate(45 113 127)"/>
+  <circle cx="116.00" cy="124.00" r="3.40" fill="#c9a227"/>
+  <circle cx="114.40" cy="122.40" r="1.30" fill="#efd77a" fill-opacity="0.85"/>
+  <polygon points="48.00,220.00 66.00,232.00 58.00,244.00 40.00,232.00" fill="#3b4653"/>
+  <polygon points="48.00,220.00 66.00,232.00 58.00,244.00 40.00,232.00" fill="none" stroke="#0b0f13" stroke-width="2" stroke-opacity="0.85"/>
+  <polygon points="106.00,148.00 124.00,152.00 132.00,166.00 130.00,180.00 123.00,188.00 123.00,198.00 106.00,210.00 86.00,200.00 84.00,188.00 76.00,179.00 76.00,164.00 88.00,151.00" fill="url(#skullg)"/>
+  <polygon points="106.00,148.00 124.00,152.00 132.00,166.00 130.00,180.00 123.00,188.00 123.00,198.00 106.00,210.00 86.00,200.00 84.00,188.00 76.00,179.00 76.00,164.00 88.00,151.00" fill="none" stroke="#0b0f13" stroke-width="3.2" stroke-opacity="0.95"/>
+  <polygon points="84.00,163.00 102.00,162.00 101.00,178.00 84.00,177.00" fill="#0b0f13" fill-opacity="0.95"/>
+  <polygon points="86.50,166.00 99.00,164.00 99.50,174.00 86.00,175.50" fill="#6a8fd6" fill-opacity="0.42"/>
+  <polygon points="107.00,168.00 125.00,167.00 124.00,183.00 107.00,182.00" fill="#0b0f13" fill-opacity="0.95"/>
+  <polygon points="109.50,171.00 122.00,169.00 122.50,179.00 109.00,180.50" fill="#6a8fd6" fill-opacity="0.42"/>
+  <polygon points="105.00,185.00 112.00,199.00 98.00,199.00" fill="#0b0f13" fill-opacity="0.9"/>
+  <polygon points="92.00,200.00 118.00,205.00 117.00,211.00 91.00,206.00" fill="#8e876f" fill-opacity="0.95"/>
+  <polygon points="93.00,210.00 117.00,215.00 111.00,222.00 94.00,217.00" fill="#0b0f13" fill-opacity="0.5"/>
+  <polygon points="86.00,158.00 100.00,151.00 113.00,156.00 101.00,163.00 88.00,166.00" fill="#ffffff" fill-opacity="0.26"/>
+</svg>
